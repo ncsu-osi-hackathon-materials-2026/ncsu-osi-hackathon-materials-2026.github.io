@@ -4,10 +4,10 @@
  */
 window.SITE_CONFIG = {
   // Google Form for NC State site registration (e.g. "https://forms.gle/abc123")
-  registerUrl: "",
+  registerUrl: "https://forms.gle/gdf24Ca9DjGLvMXa6",
 
   // Slack invite link (e.g. "https://join.slack.com/t/...")
-  slackUrl: "",
+  slackUrl: "https://join.slack.com/t/osihackathonorg/shared_invite/zt-4cgvr8uc5-OCBhoinYhL9oXtCVhCqvhw",
 
   // Event window, Eastern Time. Drives the countdown and the "happening now" marker.
   eventStart: "2026-10-21T10:00:00-04:00",
