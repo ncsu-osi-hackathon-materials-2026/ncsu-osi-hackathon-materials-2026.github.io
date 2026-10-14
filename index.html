@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSI Hackathon @ NC State · Oct 21–22, 2026</title>
+  <meta name="description" content="NC State Materials Science & Engineering presents the OSI Hackathon @ NC State — a free, two-day build sprint on Centennial Campus where domain experts and builders team up to make AI tools for science. Oct 21–22, 2026.">
+  <meta name="theme-color" content="#CC0000">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OSI Hackathon @ NC State · Oct 21–22, 2026">
+  <meta property="og:description" content="A free two-day build sprint on Centennial Campus. Bring the science, bring the code — build AI tools for the physical sciences.">
+  <meta property="og:image" content="https://ncsu-osi-hackathon-materials-2026.github.io/assets/img/og-image.png">
+  <meta property="og:url" content="https://ncsu-osi-hackathon-materials-2026.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Apply the saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></g></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2.5"/></g></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M8 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4"/></g></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2a5 5 0 0 1 5.5 5.8"/></g></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/></g></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-atom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></g><circle cx="12" cy="12" r="1.8" fill="currentColor"/></symbol>
+  <symbol id="i-sigma" viewBox="0 0 24 24"><path d="M18 6V4H6l7 8-7 8h12v-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></g></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></g></symbol>
+  <symbol id="i-seed" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12c0-4 3-7 8-7 0 5-3 7-8 7zM12 14c0-3-2.5-5.5-7-5.5 0 4 2.5 5.5 7 5.5z"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-slack" viewBox="0 0 24 24"><g fill="currentColor"><rect x="10" y="2" width="4" height="9" rx="2"/><rect x="13" y="10" width="9" height="4" rx="2"/><rect x="10" y="13" width="4" height="9" rx="2"/><rect x="2" y="10" width="9" height="4" rx="2"/></g></symbol>
+  <symbol id="i-water" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></g></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></g></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-logo" viewBox="0 0 32 32">
+    <g stroke="currentColor" stroke-width="1.6" fill="none" opacity=".55">
+      <path d="M16 4 26.4 10v12L16 28 5.6 22V10z"/><path d="M16 16V4M16 16l10.4 6M16 16 5.6 22"/>
+    </g>
+    <circle cx="16" cy="4" r="2.6" fill="currentColor"/><circle cx="26.4" cy="10" r="2.6" fill="currentColor"/>
+    <circle cx="26.4" cy="22" r="2.6" fill="currentColor"/><circle cx="16" cy="28" r="2.6" fill="currentColor"/>
+    <circle cx="5.6" cy="22" r="2.6" fill="currentColor"/><circle cx="5.6" cy="10" r="2.6" fill="currentColor"/>
+    <circle cx="16" cy="16" r="3.6" fill="#CC0000"/>
+  </symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <a class="announce" href="#register" data-link="register">
+    <span class="announce__pulse" aria-hidden="true"></span>
+    <span class="announce__text"><strong>Registration is open</strong><span class="hide-sm"> · OSI Hackathon @ NC State · Oct 21–22, 2026</span></span>
+    <span class="announce__cta">Register here <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+  </a>
+
+  <nav class="nav" aria-label="Main">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="OSI Hackathon at NC State — home">
+        <svg class="brand__mark" aria-hidden="true"><use href="#i-logo"/></svg>
+        <span class="brand__text">OSI Hackathon <span class="brand__at">@ NC State</span></span>
+      </a>
+
+      <div class="nav__links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#build">What to build</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#venue">Venue</a>
+        <a href="#resources">Resources</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav__slack" href="#register" data-link="slack"><svg class="ico" aria-hidden="true"><use href="#i-slack"/></svg> Slack</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch color theme">
+          <svg class="ico ico--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+          <svg class="ico ico--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn--primary btn--sm" href="#register" data-link="register">Register</a>
+        <button class="icon-btn nav__toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <svg class="ico ico--menu" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="ico ico--close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow eyebrow--red">NC State Materials Science &amp; Engineering presents</p>
+        <h1 class="hero__title">OSI Hackathon <span class="hero__at">@ NC State</span></h1>
+        <p class="hero__lede">A free, two-day build sprint where scientists and builders team up to create AI tools for real research — part of the worldwide <strong>Open Scientific Intelligence Hackathon</strong> for the physical sciences &amp; mathematics.</p>
+
+        <ul class="hero__meta" role="list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg> Wed–Thu, Oct 21–22, 2026</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Centennial Campus, Raleigh</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-ticket"/></svg> Free · Everyone welcome</li>
+        </ul>
+
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" href="#register" data-link="register">Register here <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost btn--lg" href="#register" data-link="slack"><svg class="ico" aria-hidden="true"><use href="#i-slack"/></svg> Join the Slack</a>
+        </div>
+
+        <div class="countdown" id="countdown" aria-live="polite">
+          <p class="countdown__label mono" id="countdown-label">Kickoff in</p>
+          <div class="countdown__grid" id="countdown-grid">
+            <div><span id="cd-d">--</span><small>days</small></div>
+            <div><span id="cd-h">--</span><small>hrs</small></div>
+            <div><span id="cd-m">--</span><small>min</small></div>
+            <div><span id="cd-s">--</span><small>sec</small></div>
+          </div>
+        </div>
+      </div>
+
+      <figure class="hero__figure" aria-label="Animated illustration: a crystal lattice of atoms re-arranging into a neural network">
+        <div class="hero__canvas-wrap">
+          <canvas id="lattice" aria-hidden="true"></canvas>
+          <div class="hero__fig-hud mono" aria-hidden="true">
+            <span><i class="dot dot--red"></i>atoms</span>
+            <span><i class="dot dot--blue"></i>neurons</span>
+          </div>
+        </div>
+        <figcaption class="mono">fig. 1 — <span id="fig-state">crystal lattice</span> <span class="fig-arrow">⇄</span> <span id="fig-state-next">neural network</span></figcaption>
+      </figure>
+    </div>
+
+    <p class="container hero__formerly mono">Formerly the LLM Hackathon for Materials Science &amp; Chemistry · <a href="https://llmhackathon.github.io/" data-link="global" target="_blank" rel="noopener">Worldwide event <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+  </section>
+
+  <!-- ============ QUICK FACTS ============ -->
+  <section class="facts" aria-label="Quick facts">
+    <div class="container">
+      <ul class="facts__grid" role="list">
+        <li class="reveal"><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg><div><strong>2 days</strong><span>Oct 21–22</span></div></li>
+        <li class="reveal"><svg class="ico" aria-hidden="true"><use href="#i-ticket"/></svg><div><strong>Free</strong><span>No fee, ever</span></div></li>
+        <li class="reveal"><svg class="ico" aria-hidden="true"><use href="#i-shirt"/></svg><div><strong>T-shirt</strong><span>Event tee for you</span></div></li>
+        <li class="reveal"><svg class="ico" aria-hidden="true"><use href="#i-food"/></svg><div><strong>Food on us</strong><span>Meals, snacks, water</span></div></li>
+        <li class="reveal"><svg class="ico" aria-hidden="true"><use href="#i-team"/></svg><div><strong>Teams</strong><span>Come solo or bring one</span></div></li>
+        <li class="reveal"><svg class="ico" aria-hidden="true"><use href="#i-spark"/></svg><div><strong>All levels</strong><span>No AI experience needed</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Why this hackathon</p>
+        <h2>The best ideas need <span class="u-red">both halves.</span></h2>
+        <p class="section__lede">Scientists know which problems matter. Builders know what today's AI can actually do. For two days on Centennial Campus, they sit at the same table.</p>
+      </div>
+
+      <div class="halves">
+        <article class="half half--science reveal">
+          <div class="half__icon"><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg></div>
+          <h3>Bring the science</h3>
+          <p>Materials scientists, chemists, physicists, mathematicians. You bring the hard problem, the messy dataset, the workflow that eats your week.</p>
+          <ul class="tags" role="list"><li>domain knowledge</li><li>real data</li><li>research questions</li></ul>
+        </article>
+
+        <div class="halves__join reveal" aria-hidden="true">
+          <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="38" fill="none" stroke="currentColor" stroke-dasharray="3 5"/><path d="M40 26v28M26 40h28" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+
+        <article class="half half--code reveal">
+          <div class="half__icon"><svg class="ico" aria-hidden="true"><use href="#i-code"/></svg></div>
+          <h3>Bring the code</h3>
+          <p>Computer scientists, data folks, engineers, designers. You bring LLMs, agents, pipelines and interfaces — and a curiosity about where they break.</p>
+          <ul class="tags" role="list"><li>LLMs &amp; agents</li><li>software</li><li>data &amp; ML</li></ul>
+        </article>
+      </div>
+
+      <div class="growth reveal">
+        <div class="growth__intro">
+          <p class="eyebrow">A worldwide movement</p>
+          <p>NC State is one of the on-site hubs of the global OSI Hackathon. Every site hacks the same two days and submits to the same showcase.</p>
+          <a class="link-arrow" href="https://llmhackathon.github.io/" data-link="global" target="_blank" rel="noopener">Visit the worldwide event <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+        </div>
+        <ol class="growth__timeline" role="list">
+          <li><span class="mono">2023</span><strong data-count="14">14</strong><small>projects in the first sprint</small></li>
+          <li><span class="mono">2024</span><strong data-count="34">34</strong><small>projects · 7 sites</small></li>
+          <li><span class="mono">2025</span><strong data-count="120">120</strong><small>projects · 16 sites</small></li>
+          <li class="is-now"><span class="mono">2026</span><strong data-count="25" data-suffix="+">25+</strong><small>sites worldwide — incl. NC State</small></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO ============ -->
+  <section class="section section--alt" id="who">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Who should come</p>
+        <h2>Everyone is welcome.</h2>
+        <p class="section__lede">Any department, any institution, any level. If you're curious about AI for science, there's a seat for you.</p>
+      </div>
+      <ul class="cards cards--3" role="list">
+        <li class="card reveal"><svg class="card__ico ico" aria-hidden="true"><use href="#i-atom"/></svg><h3>Materials &amp; chemistry researchers</h3><p>Turn a bottleneck from your lab into a tool that solves it.</p></li>
+        <li class="card reveal"><svg class="card__ico ico" aria-hidden="true"><use href="#i-sigma"/></svg><h3>Physicists &amp; mathematicians</h3><p>This year's scope spans all of the physical sciences and math.</p></li>
+        <li class="card reveal"><svg class="card__ico ico" aria-hidden="true"><use href="#i-code"/></svg><h3>CS, data &amp; engineering folks</h3><p>Find a problem worth solving and a domain partner to solve it with.</p></li>
+        <li class="card reveal"><svg class="card__ico ico" aria-hidden="true"><use href="#i-cap"/></svg><h3>Students at every level</h3><p>Undergrads and grad students — a great first hackathon.</p></li>
+        <li class="card reveal"><svg class="card__ico ico" aria-hidden="true"><use href="#i-briefcase"/></svg><h3>Postdocs, staff &amp; industry</h3><p>Share your experience, mentor a team, or build alongside one.</p></li>
+        <li class="card reveal"><svg class="card__ico ico" aria-hidden="true"><use href="#i-seed"/></svg><h3>Complete beginners</h3><p>Never called an AI model from code? The resources below will get you going.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ON US ============ -->
+  <section class="section section--tight" id="perks" aria-label="What we provide">
+    <div class="container perks reveal">
+      <div class="perks__art" aria-hidden="true">
+        <svg viewBox="0 0 240 220" class="shirt">
+          <defs>
+            <linearGradient id="shirt-shade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".18"/></linearGradient>
+          </defs>
+          <path class="shirt__body" d="M84 18 38 38 12 82l34 18 12-14v120h124V86l12 14 34-18-26-44-46-20c-4 16-18 26-36 26S88 34 84 18z"/>
+          <path d="M84 18 38 38 12 82l34 18 12-14v120h124V86l12 14 34-18-26-44-46-20c-4 16-18 26-36 26S88 34 84 18z" fill="url(#shirt-shade)"/>
+          <path class="shirt__collar" d="M84 18c4 16 18 26 36 26s32-10 36-26" fill="none" stroke-width="4"/>
+          <g transform="translate(96 78)" class="shirt__logo">
+            <g stroke-width="2" fill="none" opacity=".6"><path d="M24 4 44 16v24L24 52 4 40V16z"/><path d="M24 28V4M24 28l20 12M24 28 4 40"/></g>
+            <circle cx="24" cy="4" r="4"/><circle cx="44" cy="16" r="4"/><circle cx="44" cy="40" r="4"/><circle cx="24" cy="52" r="4"/><circle cx="4" cy="40" r="4"/><circle cx="4" cy="16" r="4"/>
+            <circle cx="24" cy="28" r="6" class="shirt__core"/>
+          </g>
+          <text x="120" y="160" text-anchor="middle" class="shirt__text">OSI · NC STATE</text>
+          <text x="120" y="176" text-anchor="middle" class="shirt__sub">HACKATHON 2026</text>
+        </svg>
+      </div>
+      <div class="perks__copy">
+        <p class="eyebrow">On us</p>
+        <h2>You bring the ideas. We'll handle the rest.</h2>
+        <ul class="perks__list" role="list">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-shirt"/></svg><div><strong>Free event T-shirt</strong><span>Yours to keep.</span></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-food"/></svg><div><strong>Food &amp; snacks</strong><span>Provided on site, both days.</span></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-water"/></svg><div><strong>Water &amp; drinks</strong><span>Stay hydrated while you build.</span></div></li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-chat"/></svg><div><strong>Help when you're stuck</strong><span>Mentors from academia and industry on Slack.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT TO BUILD ============ -->
+  <section class="section section--alt" id="build">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">What to build</p>
+        <h2>Tools that move science forward.</h2>
+        <p class="section__lede">LLMs, agents, datasets, benchmarks, models, scientific software — if it helps researchers work faster or see further, it counts. A few seeds to get you thinking:</p>
+      </div>
+
+      <div class="build">
+        <ul class="ideas" role="list">
+          <li class="idea reveal"><span class="idea__n mono">01</span><h3>Lab copilots</h3><p>Assistants for materials databases and electronic lab notebooks.</p></li>
+          <li class="idea reveal"><span class="idea__n mono">02</span><h3>Simulation agents</h3><p>Agents that set up, run and analyze MD or DFT workflows.</p></li>
+          <li class="idea reveal"><span class="idea__n mono">03</span><h3>Data &amp; benchmarks</h3><p>Curate datasets, extract data from papers, build evaluations.</p></li>
+          <li class="idea reveal"><span class="idea__n mono">04</span><h3>Design &amp; discovery</h3><p>Generative tools for polymers, alloys, molecules and soft matter.</p></li>
+          <li class="idea reveal"><span class="idea__n mono">05</span><h3>Scientific software</h3><p>Plugins, models and pipelines other researchers can reuse.</p></li>
+          <li class="idea reveal"><span class="idea__n mono">06</span><h3>Teaching &amp; outreach</h3><p>Interactive labs, tutors and explainers for science classrooms.</p></li>
+        </ul>
+
+        <aside class="build__side">
+          <div class="tba reveal">
+            <span class="badge badge--live"><i></i>Coming soon</span>
+            <h3>Tracks &amp; prizes</h3>
+            <p>Official tracks and prizes will be announced before kickoff. Join the Slack to hear first.</p>
+            <a class="btn btn--ghost btn--sm" href="#register" data-link="slack"><svg class="ico" aria-hidden="true"><use href="#i-slack"/></svg> Get updates</a>
+          </div>
+
+          <div class="judging reveal">
+            <p class="eyebrow">How projects are judged</p>
+            <ol role="list">
+              <li><strong>Impact</strong><span>Potential to change how research is done</span></li>
+              <li><strong>Innovation</strong><span>A novel approach or combination</span></li>
+              <li><strong>Scalability</strong><span>Could it grow beyond the weekend?</span></li>
+              <li><strong>Relevance</strong><span>Grounded in real scientific needs</span></li>
+            </ol>
+            <p class="fine">Criteria from the worldwide OSI Hackathon.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SCHEDULE ============ -->
+  <section class="section" id="schedule">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Schedule</p>
+        <h2>Two days, one sprint.</h2>
+        <p class="section__lede">All times Eastern. <span class="badge badge--soft">Tentative</span> Times follow the worldwide OSI format; final details will be posted on Slack.</p>
+      </div>
+
+      <div class="schedule reveal">
+        <div class="tabs" role="tablist" aria-label="Schedule days">
+          <button class="tab" role="tab" id="tab-d1" aria-controls="panel-d1" aria-selected="true"><span class="mono">Day 1</span>Wed, Oct 21</button>
+          <button class="tab" role="tab" id="tab-d2" aria-controls="panel-d2" aria-selected="false" tabindex="-1"><span class="mono">Day 2</span>Thu, Oct 22</button>
+          <button class="tab" role="tab" id="tab-after" aria-controls="panel-after" aria-selected="false" tabindex="-1"><span class="mono">After</span>Showcase</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-d1" aria-labelledby="tab-d1">
+          <ol class="timeline" role="list">
+            <li data-start="2026-10-21T10:00:00-04:00" data-end="2026-10-21T11:00:00-04:00">
+              <time class="mono">10:00 AM</time><div><h3>Kickoff &amp; team formation</h3><p>Global opening, then meet people and form teams on site. Come solo — we'll help you find a team.</p></div>
+            </li>
+            <li data-start="2026-10-21T11:00:00-04:00" data-end="2026-10-21T12:00:00-04:00">
+              <time class="mono">11:00 AM</time><div><h3>Hacking begins</h3><p>Pick a problem, sketch a plan, start building.</p></div>
+            </li>
+            <li>
+              <time class="mono">Midday</time><div><h3>Lunch on site</h3><p>Food, snacks and water provided. Exact time announced on Slack.</p></div>
+            </li>
+            <li data-start="2026-10-21T12:00:00-04:00" data-end="2026-10-22T09:00:00-04:00">
+              <time class="mono">All day</time><div><h3>Build &amp; mentorship</h3><p>Mentors from academia and industry available on Slack throughout.</p></div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-d2" aria-labelledby="tab-d2" hidden>
+          <ol class="timeline" role="list">
+            <li data-start="2026-10-22T09:00:00-04:00" data-end="2026-10-22T12:00:00-04:00">
+              <time class="mono">Morning</time><div><h3>Build day</h3><p>Keep building. On-site hours will be shared on Slack.</p></div>
+            </li>
+            <li>
+              <time class="mono">Midday</time><div><h3>Lunch on site</h3><p>Refuel with your team.</p></div>
+            </li>
+            <li data-start="2026-10-22T12:00:00-04:00" data-end="2026-10-22T18:00:00-04:00">
+              <time class="mono">Afternoon</time><div><h3>Polish &amp; record your demo</h3><p>Write up the project, record a short demo, prepare your submission.</p></div>
+            </li>
+            <li class="is-key" data-start="2026-10-22T18:00:00-04:00" data-end="2026-10-22T18:30:00-04:00">
+              <time class="mono">6:00 PM</time><div><h3>Final submissions due</h3><p>Submit through the worldwide OSI Hackathon process.</p></div>
+            </li>
+          </ol>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="panel-after" aria-labelledby="tab-after" hidden>
+          <ol class="timeline" role="list">
+            <li><time class="mono">Following days</time><div><h3>Judging</h3><p>Projects from every site are reviewed.</p></div></li>
+            <li class="is-key"><time class="mono">Date TBA</time><div><h3>Winners &amp; virtual showcase</h3><p>Winners announced and featured projects presented online.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REGISTER ============ -->
+  <section class="section section--alt" id="register">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow eyebrow--red">How to join</p>
+        <h2>Three steps. Two minutes.</h2>
+      </div>
+
+      <ol class="steps" role="list">
+        <li class="step step--primary reveal">
+          <span class="step__n">1</span>
+          <h3>Register for the NC State site</h3>
+          <p>Fill out our short form to save your on-site spot.</p>
+          <a class="btn btn--primary" href="#register" data-link="register" data-pending="Form opens soon">Register here <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="step reveal">
+          <span class="step__n">2</span>
+          <h3>Join our Slack</h3>
+          <p>Room details, schedule updates, team-finding and questions — it's also how to reach us.</p>
+          <a class="btn btn--ghost" href="#register" data-link="slack" data-pending="Link coming soon"><svg class="ico" aria-hidden="true"><use href="#i-slack"/></svg> Join Slack</a>
+        </li>
+        <li class="step reveal">
+          <span class="step__n">3</span>
+          <h3>Register globally <span class="badge badge--soft">recommended</span></h3>
+          <p>Sign up for the worldwide OSI Hackathon to get global announcements.</p>
+          <a class="btn btn--ghost" href="https://luma.com/ku88xh92" data-link="globalRegister" target="_blank" rel="noopener">Global registration <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ VENUE ============ -->
+  <section class="section" id="venue">
+    <div class="container venue">
+      <div class="venue__copy reveal">
+        <p class="eyebrow">Venue</p>
+        <h2>Centennial Campus, NC State</h2>
+        <dl class="venue__facts">
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Where</dt><dd>NC State University, Centennial Campus, Raleigh, NC<br><span class="badge badge--soft">Building &amp; room TBA</span></dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg> When</dt><dd>Wednesday–Thursday, October 21–22, 2026</dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-laptop"/></svg> Bring</dt><dd>Your laptop and charger. A problem you care about is a bonus.</dd></div>
+          <div><dt><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg> Remote?</dt><dd>Can't make it to campus? <a href="https://luma.com/ku88xh92" data-link="globalRegister" target="_blank" rel="noopener">Join the worldwide event virtually</a>.</dd></div>
+        </dl>
+        <p class="fine">Exact room will be shared on Slack and with registered participants.</p>
+      </div>
+      <div class="venue__map reveal">
+        <iframe title="Map of NC State Centennial Campus" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Centennial%20Campus%2C%20North%20Carolina%20State%20University%2C%20Raleigh%2C%20NC&z=15&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESOURCES ============ -->
+  <section class="section section--alt" id="resources">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Resources</p>
+        <h2>Get a head start.</h2>
+        <p class="section__lede">Optional, but handy. Curated from the <a href="https://llmhackathon.github.io/resources/" target="_blank" rel="noopener">worldwide resource list</a>.</p>
+      </div>
+
+      <div class="filters reveal" role="group" aria-label="Filter resources">
+        <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="llm" aria-pressed="false">LLM basics</button>
+        <button class="chip" data-filter="agents" aria-pressed="false">Agents &amp; RAG</button>
+        <button class="chip" data-filter="tools" aria-pressed="false">Materials &amp; chem tools</button>
+        <button class="chip" data-filter="data" aria-pressed="false">Datasets</button>
+        <button class="chip" data-filter="papers" aria-pressed="false">Papers</button>
+        <button class="chip" data-filter="demo" aria-pressed="false">Demo &amp; pitch</button>
+      </div>
+
+      <ul class="resources" role="list" id="resource-list">
+        <li data-cat="llm"><a href="https://www.youtube.com/watch?v=zjkBMFhNj_g" target="_blank" rel="noopener"><span class="res__tag">Video</span><strong>Intro to Large Language Models</strong><small>Andrej Karpathy</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="llm"><a href="https://youtu.be/kCc8FmEb1nY" target="_blank" rel="noopener"><span class="res__tag">Video</span><strong>Let's build GPT, from scratch</strong><small>Andrej Karpathy</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="llm"><a href="https://github.com/mlabonne/llm-course" target="_blank" rel="noopener"><span class="res__tag">Course</span><strong>LLM Course</strong><small>GitHub · mlabonne</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="llm"><a href="https://www.promptingguide.ai/" target="_blank" rel="noopener"><span class="res__tag">Guide</span><strong>Prompt Engineering Guide</strong><small>promptingguide.ai</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="llm"><a href="https://huggingface.co/docs/transformers/training" target="_blank" rel="noopener"><span class="res__tag">Docs</span><strong>Fine-tuning LLMs</strong><small>Hugging Face</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="agents"><a href="https://python.langchain.com/docs/tutorials/rag/" target="_blank" rel="noopener"><span class="res__tag">Tutorial</span><strong>Retrieval-Augmented Generation</strong><small>LangChain</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="agents"><a href="https://python.langchain.com/docs/introduction/" target="_blank" rel="noopener"><span class="res__tag">Docs</span><strong>LangChain</strong><small>Framework for LLM apps</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="agents"><a href="https://langchain-ai.github.io/langgraph/" target="_blank" rel="noopener"><span class="res__tag">Docs</span><strong>LangGraph</strong><small>Build stateful agents</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="tools"><a href="https://pymatgen.org/pymatgen.html" target="_blank" rel="noopener"><span class="res__tag">Docs</span><strong>pymatgen</strong><small>Python Materials Genomics</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="tools"><a href="https://wiki.fysik.dtu.dk/ase/tutorials/tutorials.html" target="_blank" rel="noopener"><span class="res__tag">Tutorials</span><strong>Atomic Simulation Environment</strong><small>ASE</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="tools"><a href="https://www.rdkit.org/docs/GettingStartedInPython.html" target="_blank" rel="noopener"><span class="res__tag">Docs</span><strong>RDKit</strong><small>Cheminformatics in Python</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="tools"><a href="https://pyscf.org/" target="_blank" rel="noopener"><span class="res__tag">Docs</span><strong>PySCF</strong><small>Quantum chemistry in Python</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="data"><a href="https://github.com/blaiszik/awesome-matchem-datasets" target="_blank" rel="noopener"><span class="res__tag">List</span><strong>Awesome materials &amp; chemistry datasets</strong><small>GitHub · Ben Blaiszik</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="data"><a href="https://huggingface.co/datasets" target="_blank" rel="noopener"><span class="res__tag">Hub</span><strong>Hugging Face Datasets</strong><small>huggingface.co</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="data"><a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener"><span class="res__tag">Hub</span><strong>Kaggle Datasets</strong><small>kaggle.com</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="data"><a href="https://arxiv.org/" target="_blank" rel="noopener"><span class="res__tag">Preprints</span><strong>arXiv</strong><small>arxiv.org</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="papers"><a href="https://arxiv.org/abs/2605.03205" target="_blank" rel="noopener"><span class="res__tag">Paper</span><strong>From Knowledge to Action: 2025 hackathon outcomes</strong><small>arXiv</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="papers"><a href="https://arxiv.org/abs/2411.15221" target="_blank" rel="noopener"><span class="res__tag">Paper</span><strong>Reflections from the 2024 hackathon</strong><small>arXiv</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="papers"><a href="https://doi.org/10.1039/D3DD00113J" target="_blank" rel="noopener"><span class="res__tag">Paper</span><strong>14 examples of LLMs in materials &amp; chemistry</strong><small>Digital Discovery</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="papers"><a href="https://arxiv.org/abs/2506.20743" target="_blank" rel="noopener"><span class="res__tag">Survey</span><strong>A Survey of AI for Materials Science</strong><small>arXiv</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="papers"><a href="https://doi.org/10.1039/D4SC03921A" target="_blank" rel="noopener"><span class="res__tag">Review</span><strong>LLMs and autonomous agents in chemistry</strong><small>Chemical Science</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="demo"><a href="https://www.loom.com/" target="_blank" rel="noopener"><span class="res__tag">Tool</span><strong>Loom</strong><small>Record a quick demo</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="demo"><a href="https://obsproject.com/" target="_blank" rel="noopener"><span class="res__tag">Tool</span><strong>OBS Studio</strong><small>Free screen recording</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+        <li data-cat="demo"><a href="https://canva.com/" target="_blank" rel="noopener"><span class="res__tag">Tool</span><strong>Canva</strong><small>Slides &amp; visuals</small><svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></li>
+      </ul>
+      <p class="resources__more reveal"><a class="link-arrow" href="https://llmhackathon.github.io/resources/" target="_blank" rel="noopener">See the full worldwide resource list <svg class="ico" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" id="faq">
+    <div class="container faq">
+      <div class="section__head faq__head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions, answered.</h2>
+        <p class="section__lede">Anything else? Ask us on <a href="#register" data-link="slack">Slack</a>.</p>
+      </div>
+      <div class="faq__list reveal">
+        <details><summary>Who can participate?</summary><p>Everyone. Students, researchers, postdocs, staff and industry professionals from any department or institution are welcome.</p></details>
+        <details><summary>How much does it cost?</summary><p>Nothing. The event is free, and food, snacks, water and an event T-shirt are provided on site.</p></details>
+        <details><summary>Do I need AI or coding experience?</summary><p>No. Teams work best with a mix of domain experts and builders, and the <a href="#resources">resources</a> plus mentors on Slack will help you get started.</p></details>
+        <details><summary>Do I need a team?</summary><p>No. Come solo and we'll help you find teammates at kickoff or on Slack. You're also welcome to arrive with a team.</p></details>
+        <details><summary>What should I bring?</summary><p>A laptop and charger. If you have a research problem or dataset you'd love to work on, bring that too.</p></details>
+        <details><summary>Where exactly is it?</summary><p>On NC State's Centennial Campus in Raleigh. The building and room will be announced on Slack and shared with registered participants.</p></details>
+        <details><summary>Can I join remotely?</summary><p>The NC State site is in person. If you can't make it to campus, you can join the <a href="https://luma.com/ku88xh92" data-link="globalRegister" target="_blank" rel="noopener">worldwide OSI Hackathon virtually</a>.</p></details>
+        <details><summary>What are the tracks and prizes?</summary><p>They'll be announced before kickoff. Join the Slack to hear first.</p></details>
+        <details><summary>Should I also register for the global event?</summary><p>We recommend it — global registration keeps you in the loop on worldwide announcements and the showcase.</p></details>
+        <details><summary>How do I contact the organizers?</summary><p>Join our <a href="#register" data-link="slack">Slack</a> and post your question there — that's the fastest way to reach us.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LAST YEAR ============ -->
+  <section class="section section--alt" id="last-year">
+    <div class="container lastyear">
+      <div class="section__head reveal">
+        <p class="eyebrow">Looking back</p>
+        <h2>How it went last year.</h2>
+        <p class="section__lede">In September 2025, researchers and students filled a room on Centennial Campus as one of 16 sites in a worldwide sprint that produced 120 projects.</p>
+        <p class="section__lede">This year the event has a new name, a wider scope and more sites. Same idea: put scientists and builders at one table and see what happens.</p>
+      </div>
+      <div class="gallery">
+        <figure class="photo reveal">
+          <div class="photo__placeholder" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-logo"/></svg><span class="mono">2025 photo</span></div>
+          <img src="assets/img/2025-1.jpg" alt="Participants wearing red lanyards work on laptops along a long conference table at the 2025 NC State hackathon" loading="lazy" onerror="this.remove()">
+          <figcaption class="mono">Teams at work · Sept 2025</figcaption>
+        </figure>
+        <figure class="photo reveal">
+          <div class="photo__placeholder" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-logo"/></svg><span class="mono">2025 photo</span></div>
+          <img src="assets/img/2025-2.jpg" alt="Four participants gather around their laptops to work through a problem together at the 2025 NC State hackathon" loading="lazy" onerror="this.remove()">
+          <figcaption class="mono">Science + code · Sept 2025</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="section closing">
+    <div class="container">
+      <div class="closing__panel reveal">
+        <canvas id="closing-lattice" aria-hidden="true"></canvas>
+        <div class="closing__content">
+          <p class="eyebrow eyebrow--red">Thank you</p>
+          <h2>See you on Centennial Campus.</h2>
+          <p>We can't wait to see what you build. Grab your spot, join the Slack, and bring a friend from the other half.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--primary btn--lg" href="#register" data-link="register">Register here <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn--ghost btn--lg" href="#register" data-link="slack"><svg class="ico" aria-hidden="true"><use href="#i-slack"/></svg> Join the Slack</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="brand" href="#top"><svg class="brand__mark" aria-hidden="true"><use href="#i-logo"/></svg><span class="brand__text">OSI Hackathon <span class="brand__at">@ NC State</span></span></a>
+      <p>Presented by the Department of Materials Science &amp; Engineering, NC State University. An on-site hub of the worldwide Open Scientific Intelligence Hackathon.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h3 class="mono">Event</h3>
+        <ul role="list">
+          <li><a href="#register" data-link="register">Register</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="mono">Connect</h3>
+        <ul role="list">
+          <li><a href="#register" data-link="slack">Slack (contact us)</a></li>
+          <li><a href="https://llmhackathon.github.io/" data-link="global" target="_blank" rel="noopener">Worldwide event</a></li>
+          <li><a href="https://llmhackathon.github.io/resources/" target="_blank" rel="noopener">Global resources</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container footer__base mono">
+    <span>© 2026 OSI Hackathon @ NC State</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
