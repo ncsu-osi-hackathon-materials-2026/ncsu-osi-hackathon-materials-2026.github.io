@@ -1,0 +1,61 @@
+<!doctype html>
+<!-- Source for form-header.png (1600×400), the Google Form header. Re-render with headless Chrome if the text changes. -->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; width: 1600px; height: 400px; overflow: hidden; }
+  body { background: #FAFAF8; font-family: "Space Grotesk", sans-serif; color: #15171A; position: relative; }
+  .grid { position: absolute; inset: 0; background-image: linear-gradient(#E3E1DB 1px, transparent 1px), linear-gradient(90deg, #E3E1DB 1px, transparent 1px); background-size: 48px 48px; -webkit-mask-image: radial-gradient(ellipse 45% 90% at 82% 50%, #000, transparent 75%); }
+  .bar { position: absolute; left: 0; right: 0; top: 0; height: 14px; background: #CC0000; }
+  .copy { position: absolute; left: 96px; top: 78px; width: 1000px; }
+  .eyebrow { font: 500 18px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: #B30000; }
+  h1 { margin: 18px 0 0; font-size: 84px; line-height: .98; letter-spacing: -0.035em; font-weight: 700; }
+  h1 span { color: #B30000; }
+  .meta { margin-top: 30px; font: 500 24px "JetBrains Mono", monospace; color: #474C54; }
+  .cta { display: inline-block; margin-top: 30px; padding: 16px 28px; border-radius: 999px; background: #CC0000; color: #fff; font-size: 26px; font-weight: 600; }
+  svg { position: absolute; right: 110px; top: 20px; }
+</style></head>
+<body>
+  <div class="grid"></div><div class="bar"></div>
+  <div class="copy">
+    <div class="eyebrow">NC State Materials Science &amp; Engineering presents</div>
+    <h1>OSI Hackathon <span>@ NC State</span></h1>
+    <div class="meta">Wed–Thu, Oct 21–22, 2026 · Centennial Campus, Raleigh · Free</div>
+  </div>
+  <svg width="380" height="380" viewBox="-220 -220 440 440" id="art"></svg>
+  <script>
+    // static snapshot of the hero lattice
+    var svg = document.getElementById("art"), NS = "http://www.w3.org/2000/svg";
+    var pts = [], ang = .55, tilt = .38, s = 96;
+    for (var x = 0; x < 4; x++) for (var y = 0; y < 3; y++) for (var z = 0; z < 3; z++) {
+      var lx = x - 1.5, ly = y - 1, lz = z - 1;
+      var x1 = lx * Math.cos(ang) + lz * Math.sin(ang), z1 = -lx * Math.sin(ang) + lz * Math.cos(ang);
+      var y1 = ly * Math.cos(tilt) - z1 * Math.sin(tilt), z2 = ly * Math.sin(tilt) + z1 * Math.cos(tilt);
+      var f = 6 / (6 + z2);
+      pts.push({ g: [x, y, z], x: x1 * s * f, y: y1 * s * f, z: z2, r: 15 * f, sp: (x + y + z) % 2 });
+    }
+    function key(g) { return g.join(","); }
+    var map = {}; pts.forEach(function (p) { map[key(p.g)] = p; });
+    pts.forEach(function (p) {
+      [[1,0,0],[0,1,0],[0,0,1]].forEach(function (d) {
+        var q = map[key([p.g[0]+d[0], p.g[1]+d[1], p.g[2]+d[2]])];
+        if (!q) return;
+        var l = document.createElementNS(NS, "line");
+        l.setAttribute("x1", p.x); l.setAttribute("y1", p.y); l.setAttribute("x2", q.x); l.setAttribute("y2", q.y);
+        l.setAttribute("stroke", "#6E747D"); l.setAttribute("stroke-opacity", ".45"); l.setAttribute("stroke-width", "2.4");
+        svg.appendChild(l);
+      });
+    });
+    pts.sort(function (a, b) { return b.z - a.z; }).forEach(function (p) {
+      var c = document.createElementNS(NS, "circle");
+      c.setAttribute("cx", p.x); c.setAttribute("cy", p.y); c.setAttribute("r", p.r);
+      c.setAttribute("fill", p.sp ? "#CC0000" : "#474C54");
+      c.setAttribute("fill-opacity", .6 + .4 * (1 - (p.z + 1.5) / 3));
+      svg.appendChild(c);
+      var h = document.createElementNS(NS, "circle");
+      h.setAttribute("cx", p.x - p.r * .32); h.setAttribute("cy", p.y - p.r * .34); h.setAttribute("r", p.r * .32);
+      h.setAttribute("fill", "#fff"); h.setAttribute("fill-opacity", ".45");
+      svg.appendChild(h);
+    });
+  </script>
+</body></html>
