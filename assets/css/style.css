@@ -754,3 +754,22 @@ button { font: inherit; color: inherit; cursor: pointer; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- During the event (Miro) ---------- */
+.during {
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 20px;
+  margin-top: 16px; padding: 22px 28px;
+  border-radius: 20px;
+  border: 1px dashed var(--line-strong);
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
+}
+.during__icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--blue-soft); color: var(--blue-ink); }
+.during__icon .ico { width: 24px; height: 24px; }
+.during .eyebrow { margin-bottom: 6px; }
+.during .eyebrow .badge { margin-left: 6px; font-size: .62rem; }
+.during h3 { margin-bottom: 4px; }
+.during__copy p:not(.eyebrow) { color: var(--ink-2); font-size: .95rem; }
+@media (max-width: 760px) {
+  .during { grid-template-columns: auto 1fr; padding: 22px; align-items: start; }
+  .during .btn { grid-column: 1 / -1; justify-self: start; }
+}

@@ -12,6 +12,7 @@
   var links = {
     register: C.registerUrl,
     slack: C.slackUrl,
+    miro: C.miroUrl,
     global: C.globalSiteUrl,
     globalRegister: C.globalRegisterUrl
   };
